@@ -1,0 +1,7 @@
+minimumDistance:10
+
+count: 64
+
+maxProfit: 190
+
+time: 2415763
