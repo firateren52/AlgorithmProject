@@ -30,12 +30,12 @@ import com.eren.projects.algortihm.model.DirectedWeightGraph;
 import com.eren.projects.algortihm.model.Vertex;
 
 @State(Scope.Benchmark)
-public class BenchmarkMaximumProfitStationProblem {
+public class MaximumProfitStationProblemStats {
 	// DirectedWeightGraph graph;
 	// List<StationModel> stationModels;
 
 	public static void main(String[] args) throws RunnerException {
-		Options opt = new OptionsBuilder().include(BenchmarkMaximumProfitStationProblem.class.getSimpleName()).forks(1)
+		Options opt = new OptionsBuilder().include(MaximumProfitStationProblemStats.class.getSimpleName()).forks(1)
 				.build();
 
 		new Runner(opt).run();
@@ -46,8 +46,8 @@ public class BenchmarkMaximumProfitStationProblem {
 	@Benchmark
 	public void testGreedy() throws IOException {
 		String fileName = "src\\main\\java\\com\\eren\\projects\\algortihm\\data\\stationdata_1.txt";
-		StationModelFactory stationModelFactory = new StationModelFactory();
-		stationModelFactory.fillStationModel(fileName);
+		StationModelFactory stationModelFactory = new StationModelFactory(fileName);
+		stationModelFactory.fillStationModel();
 
 		// DirectedWeightGraph graph = stationModelFactory.constructGraph();
 		GreedyStationProblem problem = new GreedyStationProblem(stationModelFactory.getMinimumDistance(),

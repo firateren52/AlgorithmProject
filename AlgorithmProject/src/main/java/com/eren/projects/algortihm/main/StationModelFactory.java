@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -26,12 +27,18 @@ import com.eren.projects.algortihm.model.VertexImpl;
  * @author firat.eren Read and Convert station input to graph
  */
 public class StationModelFactory {
+	private String fileName = "";
 	private int minimumDistance; // length between adjacent settled stations
-									// must be
+	private int count;
+	// must be
 	// greater or equeal to capacity
 	private int totalProfit = 0; // sum of all weights
-	
+
 	List<StationModel> stationModels;
+
+	public StationModelFactory(String fileName) {
+		this.fileName = fileName;
+	}
 
 	/**
 	 * Read filename and save in StationModel list
@@ -39,7 +46,7 @@ public class StationModelFactory {
 	 * @param fileName
 	 * @throws IOException
 	 */
-	public void fillStationModel(String fileName) throws IOException {
+	public void fillStationModel() throws IOException {
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(fileName));
@@ -47,7 +54,7 @@ public class StationModelFactory {
 			String line[];
 			minimumDistance = Integer.parseInt(br.readLine().trim());
 			stationModels = new ArrayList<StationModel>();
-			int count = 0;
+			count = 0;
 			while ((read = br.readLine()) != null) {
 				StationModel stationModel = new StationModel();
 				line = read.split(" ");
@@ -74,10 +81,9 @@ public class StationModelFactory {
 		}
 	}
 
-	public void generateStationModel(String fileName, int capacity) {
+	public void generateStationModel(int minimumDistance, int count) {
 
 		BufferedWriter bw = null;
-		int count = 100;
 		int maxProfit = 10;
 		try {
 			FileOutputStream erasor = new FileOutputStream(fileName);
@@ -86,13 +92,13 @@ public class StationModelFactory {
 
 			bw = new BufferedWriter(new FileWriter(new File(fileName), true));
 
-			bw.write(capacity + "");
+			bw.write(minimumDistance + "");
 			bw.newLine();
 
 			Random random = new Random();
 			TreeMap<Integer, Integer> inputMap = new TreeMap<Integer, Integer>();
 			for (int i = 0; i < count; i++) {
-				int length = random.nextInt(count);
+				int length = random.nextInt(count * maxProfit);
 				int profit = random.nextInt(maxProfit);
 				inputMap.put(length, profit);
 			}
@@ -224,6 +230,72 @@ public class StationModelFactory {
 
 	public List<StationModel> getStationModels() {
 		return stationModels;
+	}
+
+	public void writeStatistics(String algorithm, long time, int maxProfit) throws IOException {
+		BufferedWriter bw = null;
+		String fileNameStats = fileName.replace("input\\input_", "output\\"+algorithm + "_");
+		try {
+			FileOutputStream erasor = new FileOutputStream(fileNameStats);
+			erasor.write(new String().getBytes());
+			erasor.close();
+
+			bw = new BufferedWriter(new FileWriter(new File(fileNameStats), true));
+
+			bw.write("minimumDistance:" + minimumDistance + "");
+			bw.newLine();
+			bw.newLine();
+			bw.write("count: " + count);
+			bw.newLine();
+			bw.newLine();
+			bw.write("maxProfit: " + maxProfit);
+			bw.newLine();
+			bw.newLine();
+			bw.write("time: " + time);
+			bw.newLine();
+
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (bw != null)
+					bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void writeSumStatistics(String algorithm, long time) throws IOException {
+		BufferedWriter bw = null;
+		String fileNameStats = "src\\main\\resources\\data\\stats\\" + algorithm;
+		try {
+//			FileOutputStream erasor = new FileOutputStream(fileNameStats);
+//			erasor.write(new String().getBytes());
+//			erasor.close();
+
+			bw = new BufferedWriter(new FileWriter(new File(fileNameStats), true));
+
+
+			bw.write("time: " + time);
+			bw.newLine();
+
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (bw != null)
+					bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public int getStationSize() {
+		return stationModels.size();
 	}
 
 }

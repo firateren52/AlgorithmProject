@@ -25,6 +25,14 @@
 		</dependency>
 
 		<dependency>
+			<groupId>javailp</groupId>
+			<artifactId>javailp</artifactId>
+			<version>1.2</version>
+			<scope>system</scope>
+			<systemPath>C:\Users\kafein\git\AlgorithmProject\AlgorithmProject\lib\javailp-1.2a.jar</systemPath>
+		</dependency>
+
+		<dependency>
 			<groupId>org.openjdk.jmh</groupId>
 			<artifactId>jmh-generator-annprocess</artifactId>
 			<version>1.1.1</version>

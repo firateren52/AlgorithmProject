@@ -1,4 +1,11 @@
-- random sayılar üret input için
+1) BenchmarkMaximumProfitStationProblem ile algoritmalar test edilir.
 
-- longest path problemini anlat
-np-hard tır. shortest path ile benzerlikleri neden çözülemiyor v.s
+2) BenchmarkMaximumProfitStationProblem.generateStationModel() metodu rastgele test datası oluşturur. Bir kere oluşturduktan sonra
+@Ignore kullanılarak her seferinde çalışması engellenebilir.
+
+3) test motedlarında @Ignore kaldırılmalıdır, @Ignore olan metodlar çalışmaz.
+
+4) dosya yapısı:
+src/main/resources/data/input: input dizini
+src/main/resources/data/output: output dizini
+src/main/resources/data/stats: ortalama çalışma zamanı istatistiklerinin olduğu dizin    

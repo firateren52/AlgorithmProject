@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.103" errors="0" skipped="1" tests="3" name="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem">
+<testsuite failures="0" time="0.044" errors="1" skipped="0" tests="1" name="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_45\jre\bin"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\workspace_luna\AlgorithmProject"/>
+    <property name="user.dir" value="C:\Users\kafein\git\AlgorithmProject\AlgorithmProject"/>
     <property name="java.runtime.version" value="1.6.0_45-b06"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_45\jre\lib\endorsed"/>
@@ -25,7 +25,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\workspace_luna\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4677328724813270680.tmp"/>
+    <property name="classworlds.conf" value="C:\workspace_luna\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7157737797503055815.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1254"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_45\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\oracle\ora11g\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.6.0_45\bin;C:\Program Files\apache-maven-3.2.1\bin;C:\Program Files (x86)\OpenSSL-Win32\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Skype\Phone\;c:\Users\kafein\AppData\Local\atom\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -52,7 +52,7 @@
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_45\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_45\jre\lib\modules\jdk.boot.jar;C:\Program Files\Java\jdk1.6.0_45\jre\classes"/>
     <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="maven.home" value="C:\workspace_luna\AlgorithmProject\EMBEDDED"/>
+    <property name="maven.home" value="C:\Users\kafein\git\AlgorithmProject\AlgorithmProject\EMBEDDED"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -60,9 +60,36 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.054" classname="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem" name="testBruteForce">
-    <skipped/>
+  <testcase time="0.044" classname="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem" name="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem">
+    <error message="Unresolved compilation problems: 
+	The constructor StationModelFactory() is undefined
+	The method generateStationModel(int, int) in the type StationModelFactory is not applicable for the arguments (String, int)
+" type="java.lang.Error">java.lang.Error: Unresolved compilation problems: 
+	The constructor StationModelFactory() is undefined
+	The method generateStationModel(int, int) in the type StationModelFactory is not applicable for the arguments (String, int)
+
+	at com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem.generateStationModel(TestMaximumProfitStationProblem.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
   </testcase>
-  <testcase time="0.007" classname="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem" name="testGreedy"/>
-  <testcase time="0.042" classname="com.eren.projects.algortihm.algos.TestMaximumProfitStationProblem" name="testDynamic"/>
 </testsuite>
